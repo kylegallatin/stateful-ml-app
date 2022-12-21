@@ -16,7 +16,7 @@ app = Flask(__name__)
 def predict():
     json_request = request.json
     x = json_request["x"]
-    return str(data["multiprocess_manager"]["model"].predict_one(x)), 200
+    return str(data["multiprocess_manager"]["read_only_model"].predict_one(x)), 200
 
 @app.route("/update_model", methods=["PUT"])
 def update_model():
